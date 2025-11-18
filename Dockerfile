@@ -17,29 +17,35 @@ ENV NODE_ENV=production
 ENV PORT=7965
 ENV TZ=Asia/Shanghai
 
-RUN apk add --no-cache nginx sqlite curl dumb-init && \
+# 设置默认用户ID，可通过环境变量覆盖
+ARG PUID=1001
+ARG PGID=1001
+ENV PUID=${PUID}
+ENV PGID=${PGID}
+
+RUN apk add --no-cache nginx sqlite curl dumb-init su-exec && \
     addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001 && \
     rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
 
 WORKDIR /app
 
-COPY --chown=nodejs:nodejs backend/ ./backend/
-COPY --from=backend-deps --chown=nodejs:nodejs /app/node_modules ./backend/node_modules/
-COPY --from=frontend-builder --chown=nodejs:nodejs /app/frontend/dist ./frontend/
+COPY backend/ ./backend/
+COPY --from=backend-deps /app/node_modules ./backend/node_modules/
+COPY --from=frontend-builder /app/frontend/dist ./frontend/
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY docker-start.sh /app/start.sh
+COPY docker-entrypoint.sh /app/entrypoint.sh
 
 RUN mkdir -p /app/data /app/logs /var/log/nginx /var/lib/nginx/logs /run/nginx && \
-    chown -R nodejs:nodejs /app /var/log/nginx /var/lib/nginx /etc/nginx /run/nginx && \
     chmod 755 /app/data /app/logs /var/log/nginx /var/lib/nginx /var/lib/nginx/logs /etc/nginx /run/nginx && \
     chmod 644 /etc/nginx/nginx.conf && \
-    chmod +x /app/start.sh
+    chmod +x /app/start.sh /app/entrypoint.sh
 
-USER nodejs
+# 移除USER指令，让entrypoint脚本处理用户切换
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost/health || exit 1
 
-ENTRYPOINT ["dumb-init", "--"]
+ENTRYPOINT ["dumb-init", "--", "/app/entrypoint.sh"]
 CMD ["/app/start.sh"]
