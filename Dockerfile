@@ -10,7 +10,7 @@ FROM node:18-alpine AS backend-deps
 WORKDIR /app
 RUN apk add --no-cache sqlite curl && rm -rf /var/cache/apk/*
 COPY backend/package*.json ./
-RUN npm ci --only=production --silent && npm cache clean --force
+RUN npm ci --only=production --silent && npm cache clean --force && ls -la node_modules/
 
 FROM node:18-alpine AS production
 ENV NODE_ENV=production
@@ -32,7 +32,7 @@ WORKDIR /app
 
 COPY backend/ ./backend/
 COPY --from=backend-deps /app/node_modules ./backend/node_modules/
-COPY --from=frontend-builder /app/frontend/dist ./frontend/
+COPY --from=frontend-builder /app/frontend/dist ./frontend/dist/
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY docker-start.sh /app/start.sh
 COPY docker-entrypoint.sh /app/entrypoint.sh
