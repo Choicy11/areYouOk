@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   areyouok:
-    image: areyouok:dev
+    image: pxvp2008/areyouok-app:latest
     container_name: areyouok-app
     restart: unless-stopped
     ports:
