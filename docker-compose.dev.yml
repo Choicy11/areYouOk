@@ -6,20 +6,23 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
+      args:
+        - PUID=${PUID:-1000}
+        - PGID=${PGID:-1000}
     container_name: areyouok-dev
     ports:
-      - "3000:80"
+      - "53000:3000"
       - "7965:7965"
     environment:
       - NODE_ENV=development
       - PORT=7965
       - TZ=Asia/Shanghai
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
     volumes:
       - ./data:/app/data:rw
       - ./logs:/app/logs:rw
       - ./backend/.env:/app/backend/.env:ro
-      - ./backend:/app/backend:ro
-      - ./frontend:/app/frontend:ro
     networks:
       - areyouok-network
     command: >
